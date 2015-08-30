@@ -16,14 +16,16 @@ public class CharSelectScript : MonoBehaviour {
 
     public void InitCharSelect()
     {
-        var positionX = gameObject.transform.position.x - (GetComponent<Renderer>().bounds.size.x / 2);
+        var positionX = gameObject.transform.position.x - (GetComponent<Renderer>().bounds.size.x / 4);
         foreach (var character in this.characters)
         {
             character.isSelected = false;
             var pos = gameObject.transform.position;
             pos.x += positionX;
-            positionX += 2f;
-            Instantiate(character.spawnThis, pos, gameObject.transform.rotation);
+            positionX += 1.7f;
+            var a = Instantiate(character.spawnThis, pos, gameObject.transform.rotation) as GameObject;
+            var b = a.GetComponent(typeof(CharacterScript)) as CharacterScript;
+            b.SetCharType(character.charType);
         }
     }
 }

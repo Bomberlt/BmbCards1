@@ -25,7 +25,7 @@ Transform:
   m_GameObject: {fileID: 187140}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 2.20000005, y: 1.04999995, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: .400000006, y: .400000006, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -41,7 +41,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   charType: 0
-  isSelected: 0
+  None: {fileID: 21300000, guid: 080d01393162fb340a2be57ab3e58086, type: 3}
+  Killer: {fileID: 21300000, guid: a04c8e94d7dcec646a91a13afc31c979, type: 3}
+  Theif: {fileID: 21300000, guid: d6a398afdbfbd1e48835cec9385a2170, type: 3}
+  Religious: {fileID: 21300000, guid: 4151cc02fb773dc4cab9a6f291213b85, type: 3}
+  King: {fileID: 21300000, guid: d8bfd328fb6dc9f4aac7f352a5e2d637, type: 3}
+  Merchant: {fileID: 21300000, guid: 2917f0e676e8e904890f8dd4555827da, type: 3}
+  Wizard: {fileID: 21300000, guid: e044f4d275f23034db80fd64eb76acbd, type: 3}
+  Builder: {fileID: 21300000, guid: abc73fbe334181c418c601956fa14bad, type: 3}
+  Warrior: {fileID: 21300000, guid: bb142546f053f854cac02b4b8d35ae89, type: 3}
 --- !u!212 &21212762
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -74,7 +82,60 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.x
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_LocalScale.y
+      value: .400000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: None
+      value: 
+      objectReference: {fileID: 21300000, guid: 080d01393162fb340a2be57ab3e58086,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Builder
+      value: 
+      objectReference: {fileID: 21300000, guid: abc73fbe334181c418c601956fa14bad,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Killer
+      value: 
+      objectReference: {fileID: 21300000, guid: a04c8e94d7dcec646a91a13afc31c979,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: King
+      value: 
+      objectReference: {fileID: 21300000, guid: d8bfd328fb6dc9f4aac7f352a5e2d637,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Merchant
+      value: 
+      objectReference: {fileID: 21300000, guid: 2917f0e676e8e904890f8dd4555827da,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Religious
+      value: 
+      objectReference: {fileID: 21300000, guid: 4151cc02fb773dc4cab9a6f291213b85,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Theif
+      value: 
+      objectReference: {fileID: 21300000, guid: d6a398afdbfbd1e48835cec9385a2170,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Warrior
+      value: 
+      objectReference: {fileID: 21300000, guid: bb142546f053f854cac02b4b8d35ae89,
+        type: 3}
+    - target: {fileID: 0}
+      propertyPath: Wizard
+      value: 
+      objectReference: {fileID: 21300000, guid: e044f4d275f23034db80fd64eb76acbd,
+        type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 187140}
