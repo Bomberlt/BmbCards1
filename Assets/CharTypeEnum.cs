@@ -6,6 +6,7 @@
     Religious = 3,
     King = 4,
     Merchant = 5,
-    Builder = 6,
-    Warrior = 7,
+    Wizard = 6,
+    Builder = 7,
+    Warrior = 8,
 }
