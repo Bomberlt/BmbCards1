@@ -16,7 +16,7 @@ public class CharacterScript : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        charType = CharTypeEnum.None;
+        //charType = CharTypeEnum.None;
 	}
 	
 	// Update is called once per frame
@@ -25,7 +25,8 @@ public class CharacterScript : MonoBehaviour {
 
     void OnMouseDown()
     {
-        charType = CharTypeEnum.Builder;
+        charType = CharTypeEnum.King;
+        gameObject.GetComponent<SpriteRenderer>().sprite = King;
     }
 
     public void SetCharType(CharTypeEnum newCharType)
