@@ -25,8 +25,10 @@ public class CharacterScript : MonoBehaviour {
 
     void OnMouseDown()
     {
-        charType = CharTypeEnum.King;
-        gameObject.GetComponent<SpriteRenderer>().sprite = King;
+        var player = GameObject.FindObjectOfType<PlayerScript>();
+        player.setCharacter(gameObject, charType);
+        //charType = CharTypeEnum.King;
+        //gameObject.GetComponent<SpriteRenderer>().sprite = King;
     }
 
     public void SetCharType(CharTypeEnum newCharType)
