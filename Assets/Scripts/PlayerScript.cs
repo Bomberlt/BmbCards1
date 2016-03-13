@@ -36,6 +36,12 @@ public class PlayerScript : MonoBehaviour {
         selectedCharacter.SetActive(false);
         selectedCharacter = charObject;
 
+        var charScript = charObject.GetComponent(typeof(CharacterScript)) as CharacterScript;
+        GUIScript.LogStatus(
+            "Player no {0} picked character {1}",
+            this.playerNumber,
+            charScript.charType);
+
         GUIScript.StartRound(playerNumber);
     }
 
@@ -49,10 +55,17 @@ public class PlayerScript : MonoBehaviour {
                 );
         cardPlace.SetActive(false);
         availableCards[0] = card;
+        var cardScript = card.GetComponent(typeof(CardScript)) as CardScript;
+        GUIScript.LogStatus("Card {0} taken by player no {1}", cardScript.price, this.playerNumber);
     }
 
     public void playCharacter(GameObject charObject)
     {
+        var charScript = charObject.GetComponent(typeof(CharacterScript)) as CharacterScript;
+        GUIScript.LogStatus(
+            "Player no {0} playing character {1}",
+            this.playerNumber,
+            charScript.charType);
         charObject.transform.position =
             new Vector3(
                 activeCharacter.transform.position.x,

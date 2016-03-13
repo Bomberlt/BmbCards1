@@ -24,13 +24,14 @@ public class GUIScript : MonoBehaviour {
     public void StartGame () {
         startButton.enabled = false;
         startButton.GetComponentInChildren<CanvasGroup>().alpha = 0;
-        statusText.text = "Starting";
+        GUIScript.LogStatus("Starting game");
         var charSelect = GameObject.FindObjectOfType<CharSelectScript>();
         charSelect.InitCharSelect();
     }
 
     public static void StartRound(int playerNumber)
     {
+        GUIScript.LogStatus("Starting round");
         var charSelect = GameObject.FindObjectOfType<CharSelectScript>();
         charSelect.FlopUnselectedChars();
         // TODO: Set players turns
@@ -39,7 +40,16 @@ public class GUIScript : MonoBehaviour {
 
     public static void PlayerTurn(int playerNumber)
     {
+        GUIScript.LogStatus("Player {0} turn", playerNumber);
         var cardSelect = GameObject.FindObjectOfType<CardSelectScript>();
         cardSelect.canDrawCards = CardDrawPerTurn;
+    }
+
+    public static void LogStatus(string text, params object[] moreText)
+    {
+        var fullText = string.Format(text, moreText);
+        Debug.Log(fullText);
+        var gui = GameObject.FindObjectOfType<GUIScript>();
+        gui.statusText.text = fullText;
     }
 }

@@ -64,6 +64,7 @@ public class CharSelectScript : MonoBehaviour {
             var charScript = characterObj.GetComponent(typeof(CharacterScript)) as CharacterScript;
             if (!charScript.isSelected)
             {
+                GUIScript.LogStatus("Char {0} flipped", charScript.charType);
                 characterObj.SetActive(false);
             }
         }
