@@ -2,8 +2,11 @@
 using System.Collections;
 
 public class CharacterScript : MonoBehaviour {
-
+    
     public CharTypeEnum charType;
+    public bool isSelected;
+    public bool isPlayed;
+
     public Sprite None;
     public Sprite Killer;
     public Sprite Theif;
@@ -25,10 +28,10 @@ public class CharacterScript : MonoBehaviour {
 
     void OnMouseDown()
     {
+        // TODO: Check if it's players turn
+        this.isSelected = true;
         var player = GameObject.FindObjectOfType<PlayerScript>();
         player.setCharacter(gameObject, charType);
-        //charType = CharTypeEnum.King;
-        //gameObject.GetComponent<SpriteRenderer>().sprite = King;
     }
 
     public void SetCharType(CharTypeEnum newCharType)

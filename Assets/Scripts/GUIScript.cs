@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using System;
 
 public class GUIScript : MonoBehaviour {
 
@@ -24,5 +25,12 @@ public class GUIScript : MonoBehaviour {
         statusText.text = "Starting";
         var charSelect = GameObject.FindObjectOfType<CharSelectScript>();
         charSelect.InitCharSelect();
+    }
+
+    public static void StartRound(int playerNumber)
+    {
+        var charSelect = GameObject.FindObjectOfType<CharSelectScript>();
+        charSelect.FlopUnselectedChars();
+        // TODO: Set players turns
     }
 }

@@ -4,7 +4,8 @@ using System.Collections;
 public class PlayerScript : MonoBehaviour {
 
     public int money;
-    public Character currentCharacter;
+    public int playerNumber;
+    public GameObject currentCharacter;
     public GameObject[] availableCards;
 
     // Use this for initialization
@@ -22,12 +23,14 @@ public class PlayerScript : MonoBehaviour {
     {
         charObject.transform.position =
             new Vector3(
-                currentCharacter.spawnThis.transform.position.x,
-                currentCharacter.spawnThis.transform.position.y,
-                currentCharacter.spawnThis.transform.position.z
+                currentCharacter.transform.position.x,
+                currentCharacter.transform.position.y,
+                currentCharacter.transform.position.z
                 );
-        currentCharacter.spawnThis.SetActive(false);
-        currentCharacter.spawnThis = charObject;
-        currentCharacter.charType = charType;
+        currentCharacter.SetActive(false);
+        currentCharacter = charObject;
+        var charScript = currentCharacter.GetComponent(typeof(CharacterScript)) as CharacterScript;
+
+        GUIScript.StartRound(playerNumber);
     }
 }
