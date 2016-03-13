@@ -6,15 +6,18 @@ public class PlayerScript : MonoBehaviour {
 
     public int money;
     public int playerNumber;
+
     public GameObject selectedCharacter;
     public GameObject activeCharacter;
-    public GameObject[] availableCards;
 
+    public GameObject cardPlace;
+    public GameObject[] availableCards;
 
     // Use this for initialization
     void Start() {
         money = 2;
         activeCharacter.SetActive(false);
+        availableCards = new GameObject[10];
     }
 
     // Update is called once per frame
@@ -36,7 +39,19 @@ public class PlayerScript : MonoBehaviour {
         GUIScript.StartRound(playerNumber);
     }
 
-    internal void playCharacter(GameObject charObject)
+    public void takeCard(GameObject card)
+    {
+        card.transform.position =
+            new Vector3(
+                cardPlace.transform.position.x,
+                cardPlace.transform.position.y,
+                cardPlace.transform.position.z
+                );
+        cardPlace.SetActive(false);
+        availableCards[0] = card;
+    }
+
+    public void playCharacter(GameObject charObject)
     {
         charObject.transform.position =
             new Vector3(

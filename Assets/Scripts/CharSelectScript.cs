@@ -7,10 +7,12 @@ public class CharSelectScript : MonoBehaviour {
 
     public GameObject[] charactersToSpawn;
     public List<GameObject> charsObjs;
+    public GameObject background;
 
 	// Use this for initialization
 	void Start ()
     {
+        background.SetActive(false);
     }
 	
 	// Update is called once per frame
@@ -19,6 +21,7 @@ public class CharSelectScript : MonoBehaviour {
 
     public void InitCharSelect()
     {
+        background.SetActive(true);
         var charTypes = new[]
         {
             CharTypeEnum.Killer,

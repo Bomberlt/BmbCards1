@@ -2,6 +2,7 @@
 using System.Collections;
 
 public class CardScript : MonoBehaviour {
+    public int price;
 
 	// Use this for initialization
 	void Start () {
