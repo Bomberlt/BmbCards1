@@ -28,10 +28,19 @@ public class CharacterScript : MonoBehaviour {
 
     void OnMouseDown()
     {
-        // TODO: Check if it's players turn
-        this.isSelected = true;
-        var player = GameObject.FindObjectOfType<PlayerScript>();
-        player.setCharacter(gameObject, charType);
+        if (!this.isSelected)
+        {
+            // TODO: Check if it's players turn
+            this.isSelected = true;
+            var player = GameObject.FindObjectOfType<PlayerScript>();
+            player.setCharacter(gameObject);
+        }
+        else
+        {
+            this.isPlayed = true;
+            var player = GameObject.FindObjectOfType<PlayerScript>();
+            player.playCharacter(gameObject);
+        }
     }
 
     public void SetCharType(CharTypeEnum newCharType)
